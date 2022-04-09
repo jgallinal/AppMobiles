@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="movies.js"></script>
+        <link rel="stylesheet" href="movies2.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <title> Display Movies </title>
+    </head>
+    <body>
+        <div class="principal-title">
+			<span class="material-icons">local_movies</span>
+			MOVIE CENTER
+		</div>
+		<div class="cine-selector">
+			<h2>Cartelera</h2>
+			<select name="" id="cinemaSelect" onchange="showList()">
+				<option value="" disabled selected hidden>Seleccione un cine</option>
+				<option value="Movie Montevideo">Movie Montevideo</option>
+				<option value="Movie Punta Carretas">Movie Punta Carretas</option>
+				<option value="Movie Nuevocentro">Movie Nuevocentro</option>
+				<option value="Movie Portones">Movie Portones</option>
+				<option value="">Todos</option>
+			</select>
+		</div>
+        <p></p>
+        <div id="movies" class="movies">
+        </div>
+    </body>
+</html>

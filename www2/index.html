@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MobileUI Demo</title>
+    <meta name="viewport" content="minimal-ui, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="format-detection" content="telephone=no" />
+
+	<link rel="stylesheet" href="mobileui/mui.min.css" type="text/css">
+    <link rel="stylesheet" href="custom/custom.css" type="text/css">
+
+    <script src="cordova.js"></script>	
+	<script src="https://cdn.bootcss.com/vue/2.5.17/vue.min.js"></script>
+ 	<!--<script src="vendors/fastclick.min.js" type="text/javascript"></script>-->    	 	
+    	
+    <script src="vendors/jquery.min.js" type="text/javascript"></script>
+    <script src="vendors/jquery.animate-enhanced.js" type="text/javascript"></script>
+	<script src="vendors/jqwait/jquery.wait.min.js" type="text/javascript"></script>   
+    <!-- <script src="vendors/iscroll-min.js" type="text/javascript"></script> -->
+    
+	<script src="mobileui/mui.min.js" type="text/javascript"></script>
+    <script src="custom/custom.js" type="text/javascript"></script>
+</head>
+<body>
+	<!-- Main wrapper. Importantly, think carefully before you change it or remove it. Do not recommend it. -->
+	<!-- Main wrapper. Importante, Piénselo bien antes de cambiarlo o quitarlo. No se lo recomiendo. -->
+	<div id="vue-app">
+		<div id="mui-screen" class="mui-viewport">
+		
+			<div id="mui-screen-page" class="mui-page">
+				<!-- Ddefault viewport. Do not remove. It will make your life simpler and happy. -->
+				<!-- ViewPort por defecto. No lo elimines. Hará tu vida más simple y feliz. -->
+		
+				<div id="mui-viewport" class="mui-viewport">
+					
+					<div id='home-page' class="mui-page">
+						<div class="mui-page-header">
+							<div class="mui-page-logo"></div>
+							<a class="mui-headmenu" href="#"></a>
+						</div>
+						<div class="mui-page-body mui-scrollable" id="home-body">
+							<div> <!-- important for scroll! -->
+								<div class="subtitle-band">Welcome to MobileUI</div>
+								<ul id='demos' class='mui-list mui-list-disclosure'>
+									<li v-for="todo in todos">
+										<a href="#" id='gocontent' class="content" @click="set(todo)"> {{todo.movie}}</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+					<div id='content-page' class="mui-page">
+						<div class="mui-page-header">
+							<a class="mui-backarrow" href="#"></a>
+							<div class='mui-page-title'>Movie Description</div>
+							<a class="mui-headmenu" href="#"></a>
+						</div>
+						<div class="mui-page-body mui-scrollable" id="second-body">
+							<div class='mui-page-body-content'>
+								<h1 class='mui-content-title'> {{movie.movie}} </h1>
+								<img alt="Movie Poster" :src="movie.posterURL" height="300px"/>
+								<h3 class='mui-content-description'>
+									{{movie.genre}}
+								</h3>
+								<div class='mui-content-body'>
+									{{movie.description}}
+								</div>
+								<h3 class='mui-content-description'>
+									Trailer
+								</h3>
+								<div class='mui-content-body'>
+									{{movie.trailerURL}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				
+				<!-- Toolbar out of mui-viewport to be omnipresent. -->
+				<!-- Barra de herramientas fuera de mui-viewport para ser omnipresente.-->
+				<div class="mui-tabbar" id="footer">
+						<ul class="mui-tabbar-list">
+							<li class="mui-tabbar-button"><a href="#" id="tabbar-button1" >Home</a></li>
+							<li class="mui-tabbar-button"><a href="#" id="tabbar-button2" >WebSite</a></li>
+							<li class="mui-tabbar-button"><a href='#' id="tabbar-button3" >MobileUI</a></li>
+							<li class="mui-tabbar-button"><a href="#" id="tabbar-button4" >Facebook</a></li>
+							<li class="mui-tabbar-button"><a href="#" id="tabbar-button5" >Support</a></li>
+						</ul>
+				</div>
+			</div>		
+							
+		</div>
+	</div>
+	<script src="vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+</html>

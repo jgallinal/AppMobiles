@@ -45,8 +45,16 @@
 							<div> <!-- important for scroll! -->
 								<div class="subtitle-band">Welcome to MobileUI</div>
 								<ul id='demos' class='mui-list mui-list-disclosure'>
+									<h2>Cartelera</h2>
+									<select name="" id="cinemaSelect" @change="showFilms()">
+										<option value="" disabled selected hidden>Seleccione un cine</option>
+										<option value="Movie Montevideo">Movie Montevideo</option>
+										<option value="Movie Punta Carretas">Movie Punta Carretas</option>
+										<option value="Movie Nuevo Centro Shopping">Movie Nuevo Centro Shopping</option>
+										<option value="Movie Portones">Movie Portones</option>
+									</select>
 									<li v-for="todo in todos">
-										<a href="#" id='gocontent' class="content" @click="set(todo)"> {{todo.movie}}</a>
+										<a href="#" class="content" @click="set(todo)"> {{todo.movie}}</a>
 									</li>
 								</ul>
 							</div>
@@ -75,6 +83,12 @@
 								<div class='mui-content-body'>
 									{{movie.trailerURL}}
 								</div>
+								<button @click="enableDisplayShows()"></button>
+								<template v-if="displayShows === true">
+									<li v-for="show in functions">
+										{{show}}
+									</li>
+								</template>
 							</div>
 						</div>
 					</div>

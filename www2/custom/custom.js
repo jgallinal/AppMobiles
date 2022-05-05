@@ -68,15 +68,8 @@ function installEvents() {
 		{
 			id: '.mui-headmenu, #gomodal',
 			fn: () => {
-				mui.screen.showPanel('menu-panel', 'SLIDE_LEFT');	//ATENTION!!! mui.screen instead mui.viewport
+				mui.screen.showPanel('menu-panel', 'SLIDE_LEFT');
 				return false;
-			}
-		},
-		{
-			id: '.content',
-			fn: () => {
-				mui.viewport.showPage('content-page','DEF');
-				return true;
 			}
 		},
 		{
